@@ -20,7 +20,7 @@ Running a homelab like it's a small company.
 - **16-agent OpenClaw fleet** across 7 Linux machines on a Tailscale tailnet (11 nodes)
 - **Self-hosted stack:** `*arr` → Jellyfin, SearXNG + YaCy, Synapse, Mailcow, Vaultwarden
 - **Observability:** Prometheus + Grafana + Alloy · fail2ban → Discord + Matrix
-- **Patterns I'd bring to a team:** sentinel-file nginx fallback (170ms vs 1.2s failover for known outages), SOPS secrets at fleet scale, filter-repo OPSEC purges (blobs + commit messages + filenames)
+- **Reusable pattern I'd bring to a team:** sentinel-file nginx fallback — 170ms vs 1.2s failover for known outages. Shipped to prod on `status.jordannewell.com` (2026-07-16). Beats `proxy_connect_timeout` whack-a-mole by 7×.
 
 ### Shipped
 
@@ -34,8 +34,7 @@ Running a homelab like it's a small company.
 
 I file bugs with repros. They get fixed.
 
-- [WezTerm #7914](https://github.com/wezterm/wezterm/issues/7914) — Redirection Guard regression (nightly `20260707+` breaks all cross-drive symlinks/junctions)
-- OpenClaw — multiple bugs filed, community-confirmed, patched
+- [OpenClaw #81172](https://github.com/openclaw/openclaw/issues/81172) — `memory-core: memory_search blocks event loop for 60+ seconds` · filed 2026-05-18 under `dev23xyz-oss`, closed same day
 
 ### Notes on style
 
