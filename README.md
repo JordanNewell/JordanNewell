@@ -15,7 +15,7 @@
 |---|---|
 | [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) | Decode a crypto key once, re-encode across ~50 chains. Headline: Cosmos HRP swap — one decode → 19 re-encodings. 17 validators, 229 tests. |
 | [`jordannewell-com`](https://github.com/JordanNewell/jordannewell-com) | Source for [`jordannewell.com`](https://jordannewell.com) — shipping-in-public field notes on AI agents, self-hosted infra, crypto tooling, venture research. Astro SSG, tar-over-ssh to Hetzner behind Cloudflare. LLM-discoverable by design (`/llms.txt`, schema.org JSON-LD, AI feed, AI-crawler allowlist). |
-| [`dotfiles`](https://github.com/JordanNewell/dotfiles) | PowerShell + Bash across a Windows + Linux fleet. |
+| [`git-hygiene`](https://github.com/JordanNewell/git-hygiene) | *Tools don't get co-author credit.* `commit-msg` + `pre-commit` hooks that strip AI-attribution trailers (Co-Authored-By: Claude, etc.) and catch credential patterns pre-staging. Zero deps beyond bash/grep/awk. PGP-signed. |
 
 ### Outside GitHub
 
