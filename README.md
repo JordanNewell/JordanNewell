@@ -1,5 +1,5 @@
 <h1 align="center">Jordan Newell</h1>
-<p align="center"><em>Self-hosted infra. Small tools that ship. Files bugs with repros.</em></p>
+<p align="center"><em>Self-hosted infra. Small tools that ship.</em></p>
 
 <p align="center">
   <a href="https://jordannewell.com">site</a> ·
