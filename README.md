@@ -27,10 +27,10 @@ Polyglot AI chat for Obsidian. 30+ providers, agent tools, multi-model arena, vo
 
 | Package | Install | Downloads |
 |---|---|---|
-| [curtis-compliance](https://github.com/JordanNewell/curtis-compliance) | `npm i @jordannewell/curtis-compliance` | [![npm](https://img.shields.io/npm/dw/@jordannewell/curtis-compliance?color=34D399)](https://npmjs.com/package/@jordannewell/curtis-compliance) |
-| [temporal-git](https://github.com/JordanNewell/temporal-git) | `npm i temporal-git` | [![npm](https://img.shields.io/npm/dw/temporal-git?color=34D399)](https://npmjs.com/package/temporal-git) |
-| [harbormasterd](https://github.com/JordanNewell/harbormasterd) | `pip install harbormasterd` | [![pypi](https://img.shields.io/pypi/dm/harbormasterd?color=34D399)](https://pypi.org/project/harbormasterd/) |
-| [crypto-key-classifier](https://github.com/JordanNewell/crypto-key-classifier) | `pip install crypto-key-classifier` | [![pypi](https://img.shields.io/pypi/dm/crypto-key-classifier?color=34D399)](https://pypi.org/project/crypto-key-classifier/) |
+| [curtis-compliance](https://github.com/JordanNewell/curtis-compliance) | `npm i @jordannewell/curtis-compliance` | [![npm](https://img.shields.io/badge/downloads-474%2Fweek-34D399)](https://npmjs.com/package/@jordannewell/curtis-compliance) |
+| [temporal-git](https://github.com/JordanNewell/temporal-git) | `npm i temporal-git` | [![npm](https://img.shields.io/badge/downloads-654%2Fweek-34D399)](https://npmjs.com/package/temporal-git) |
+| [harbormasterd](https://github.com/JordanNewell/harbormasterd) | `pip install harbormasterd` | ![new](https://img.shields.io/badge/downloads-new-34D399) |
+| [crypto-key-classifier](https://github.com/JordanNewell/crypto-key-classifier) | `pip install crypto-key-classifier` | ![new](https://img.shields.io/badge/downloads-new-34D399) |
 
 ---
 
