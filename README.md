@@ -1,23 +1,52 @@
-<h1 align="center">Jordan Newell</h1>
-<p align="center"><em>Self-hosted infra. Small tools that ship.</em></p>
+<img src="https://jordannewell.com/today-og.png" alt="Jordan Newell — Shipping Code. Solving Real Problems." width="100%">
 
 <p align="center">
+  Open source developer tools that solve annoying, real-world problems.<br>
+  All open source. All shipped.
+</p>
+
+<p align="center">
+  <a href="https://jordannewell.com/today/">↗ today</a> ·
   <a href="https://jordannewell.com">site</a> ·
+  <a href="https://jordannewell.com/posts/">blog</a> ·
   <a href="https://status.jordannewell.com">status</a> ·
-  <a href="mailto:jordan@jordannewell.com">mail</a>
+  <a href="https://github.com/JordanNewell?tab=followers">follow</a>
 </p>
 
 ---
 
-### Code
+### ⚔️ Featured — [Curtis AI Chat](https://github.com/JordanNewell/curtis-ai-chat)
 
-| Repo | What it is |
-|---|---|
-| [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) | Decode a crypto key once, re-encode across ~50 chains. Headline: Cosmos HRP swap — one decode → 19 re-encodings. 17 validators, 229 tests. |
-| [`jordannewell-com`](https://github.com/JordanNewell/jordannewell-com) | Source for [`jordannewell.com`](https://jordannewell.com) — shipping-in-public field notes on AI agents, self-hosted infra, crypto tooling, venture research. Astro SSG, tar-over-ssh to Hetzner behind Cloudflare. LLM-discoverable by design (`/llms.txt`, schema.org JSON-LD, AI feed, AI-crawler allowlist). |
-| [`git-hygiene`](https://github.com/JordanNewell/git-hygiene) | *Tools don't get co-author credit.* `commit-msg` + `pre-commit` hooks that strip AI-attribution trailers (Co-Authored-By: Claude, etc.) and catch credential patterns pre-staging. Zero deps beyond bash/grep/awk. PGP-signed. |
+Polyglot AI chat for Obsidian. 30+ providers, agent tools, multi-model arena, voice I/O, inline diff rewrite — all native, all local-first, all MIT.
 
-### Outside GitHub
+→ [community.obsidian.md/plugins/curtis-ai-chat](https://community.obsidian.md/plugins/curtis-ai-chat)
 
-- One verified OSS bug: [`openclaw/openclaw#81172`](https://github.com/openclaw/openclaw/issues/81172) — `memory_search` event-loop blocking (closed same day).
-- Homelab: 7 Linux boxes on Tailscale running `*arr` → Jellyfin, SearXNG + YaCy, Synapse, Mailcow, Vaultwarden. Not a portfolio item — what I actually run every day.
+---
+
+### 📦 Developer Tools
+
+| Package | Install | Downloads |
+|---|---|---|
+| [curtis-compliance](https://github.com/JordanNewell/curtis-compliance) | `npm i @jordannewell/curtis-compliance` | [![npm](https://img.shields.io/npm/dw/@jordannewell/curtis-compliance?color=34D399)](https://npmjs.com/package/@jordannewell/curtis-compliance) |
+| [temporal-git](https://github.com/JordanNewell/temporal-git) | `npm i temporal-git` | [![npm](https://img.shields.io/npm/dw/temporal-git?color=34D399)](https://npmjs.com/package/temporal-git) |
+| [harbormasterd](https://github.com/JordanNewell/harbormasterd) | `pip install harbormasterd` | [![pypi](https://img.shields.io/pypi/dm/harbormasterd?color=34D399)](https://pypi.org/project/harbormasterd/) |
+| [crypto-key-classifier](https://github.com/JordanNewell/crypto-key-classifier) | `pip install crypto-key-classifier` | [![pypi](https://img.shields.io/pypi/dm/crypto-key-classifier?color=34D399)](https://pypi.org/project/crypto-key-classifier/) |
+
+---
+
+### 🚀 Operator shipping in public
+
+- **15 OpenClaw agents** + **2 Hermes** across **10 fleet hosts** on Tailscale, Matrix-E2EE'd
+- **jordannewell.com** — Astro SSG, tar-over-ssh to Hetzner behind Cloudflare. LLM-discoverable by design
+- **DW Trim** — Managing Partner, carpentry company scaling past greater Tampa Bay
+
+---
+
+<p align="center">
+  <a href="https://buymeacoffee.com/jordannewell"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-jordannewell-FFDD00?logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee"></a>
+  <a href="https://github.com/sponsors/JordanNewell"><img src="https://img.shields.io/badge/Sponsor-JordanNewell-30363d?logo=github-sponsors&logoColor=white" alt="GitHub Sponsors"></a>
+</p>
+
+---
+
+<p align="center"><em>If you made it this far, I appreciate it. — JN</em></p>
