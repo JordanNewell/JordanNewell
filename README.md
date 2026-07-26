@@ -16,9 +16,10 @@
 <a href="https://github.com/JordanNewell/harbormasterd">harbormasterd/</a>          multi-vm orchestration, pypi
 <a href="https://github.com/JordanNewell/temporal-git">temporal-git/</a>           time-travel for git
 <a href="https://github.com/JordanNewell/crypto-key-classifier">crypto-key-classifier/</a>  key attribution
+<a href="https://github.com/JordanNewell/newell-typeface">newell-typeface/</a>       original geometric typeface, ofl-1.1
 
 $ fleet
-15 openclaw agents · 10 hosts · matrix-e2ee'd
+17 agents · 10 hosts · matrix · snikket, e2ee'd
 
 $ contact
 <a href="https://jordannewell.com">site</a> · <a href="https://jordannewell.com/posts/">blog</a> · <a href="https://jordannewell.com/today/">today</a> · <a href="https://status.jordannewell.com">status</a> · <a href="https://github.com/sponsors/JordanNewell">sponsors</a></code></pre>
