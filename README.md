@@ -31,8 +31,6 @@ $ contact
 
 <br>
 
-<p align="center"><em>if you made it this far, i appreciate it.</em></p>
-
 <p align="center">
   <img src="signoff-monogram.png" width="160" alt="— JN">
 </p>
