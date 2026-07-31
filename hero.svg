@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="NEWELL">
+  <rect width="1200" height="300" fill="#0A0A0A"/>
+
+  <text x="40" y="44" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="16" xml:space="preserve"><tspan fill="#A0A0A0">jordan@aeon</tspan><tspan fill="#FFFFFF">:</tspan><tspan fill="#1AFF72">~</tspan><tspan fill="#FFFFFF">$ </tspan><tspan fill="#00FF41">status</tspan><tspan fill="#FFFFFF"> --role=engineer --locale=nz --ships=weekly</tspan></text>
+
+  <text x="1160" y="44" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="12" text-anchor="end"><tspan fill="#00FF41">● </tspan><tspan fill="#A0A0A0">live</tspan></text>
+
+  <line x1="40" y1="64" x2="1160" y2="64" stroke="#1F1F1F" stroke-width="1"/>
+
+  <svg x="120" y="76" width="960" height="170" viewBox="0 0 5962 910" preserveAspectRatio="xMidYMid meet">
+    <g transform="translate(50, 50)">
+      <g transform="translate(0, 0)">
+        <path d="M 90.0 55.0 L 89.0 55.0 L 90.0 56.0 L 90.0 755.0 L 200.0 755.0 L 200.0 166.0 L 90.0 56.0 Z" fill="#FFFFFF"/>
+        <path d="M 789.0 755.0 L 790.0 755.0 L 790.0 644.0 L 201.0 55.0 L 200.0 55.0 L 200.0 166.0 Z" fill="#FFFFFF"/>
+        <path d="M 900.0 55.0 L 790.0 55.0 L 790.0 644.0 L 900.0 754.0 L 900.0 755.0 L 901.0 755.0 L 900.0 754.0 Z" fill="#FFFFFF"/>
+      </g>
+      <g transform="translate(990.0, 0)">
+        <path d="M 475.0 700.0 L 200.0 700.0 L 200.0 460.0 L 475.0 460.0 L 475.0 350.0 L 200.0 350.0 L 200.0 110.0 L 475.0 110.0 L 475.0 0.0 L 145.0 0.0 L 145.0 55.0 L 90.0 55.0 L 90.0 755.0 L 145.0 755.0 L 145.0 810.0 L 475.0 810.0 Z" fill="#FFFFFF"/>
+      </g>
+      <g transform="translate(1610.0, 0)">
+        <path d="M 1839.0 55.0 L 1195.0 699.0 L 901.0 405.0 L 789.0 405.0 L 495.0 699.0 L -149.0 55.0 L -261.0 55.0 L 439.0 755.0 L 551.0 755.0 L 845.0 461.0 L 1139.0 755.0 L 1251.0 755.0 L 1951.0 55.0 Z" fill="#FFFFFF"/>
+      </g>
+      <g transform="translate(4002.0, 0)">
+        <path d="M 475.0 700.0 L 200.0 700.0 L 200.0 460.0 L 475.0 460.0 L 475.0 350.0 L 200.0 350.0 L 200.0 110.0 L 475.0 110.0 L 475.0 0.0 L 145.0 0.0 L 145.0 55.0 L 90.0 55.0 L 90.0 755.0 L 145.0 755.0 L 145.0 810.0 L 475.0 810.0 Z" fill="#FFFFFF"/>
+      </g>
+      <g transform="translate(4622.0, 0)">
+        <path d="M 475.0 700.0 L 200.0 700.0 L 200.0 55.0 L 90.0 55.0 L 90.0 755.0 L 145.0 755.0 L 145.0 810.0 L 475.0 810.0 Z" fill="#FFFFFF"/>
+      </g>
+      <g transform="translate(5242.0, 0)">
+        <path d="M 475.0 700.0 L 200.0 700.0 L 200.0 55.0 L 90.0 55.0 L 90.0 755.0 L 145.0 755.0 L 145.0 810.0 L 475.0 810.0 Z" fill="#FFFFFF"/>
+      </g>
+      <rect x="1190.0" y="0" width="275" height="110" fill="#00FF41"/>
+      <rect x="1190.0" y="350" width="275" height="110" fill="#00FF41"/>
+      <rect x="1190.0" y="700" width="275" height="110" fill="#00FF41"/>
+      <rect x="4202.0" y="0" width="275" height="110" fill="#00FF41"/>
+      <rect x="4202.0" y="350" width="275" height="110" fill="#00FF41"/>
+      <rect x="4202.0" y="700" width="275" height="110" fill="#00FF41"/>
+    </g>
+  </svg>
+
+  <line x1="40" y1="252" x2="1160" y2="252" stroke="#1F1F1F" stroke-width="1"/>
+
+  <text x="40" y="276" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="13" xml:space="preserve"><tspan fill="#00FF41">[ ok ]</tspan><tspan fill="#A0A0A0"> · </tspan><tspan fill="#FFFFFF">17 agents</tspan><tspan fill="#A0A0A0"> · </tspan><tspan fill="#FFFFFF">10 hosts</tspan><tspan fill="#A0A0A0"> · </tspan><tspan fill="#FFFFFF">commits today: 12</tspan><tspan fill="#A0A0A0"> · </tspan><tspan fill="#FFFFFF">ships/wk: 4</tspan><tspan fill="#A0A0A0"> · </tspan><tspan fill="#FFFFFF">uptime 99.97%</tspan></text>
+
+  <text x="1160" y="276" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="13" text-anchor="end" fill="#A0A0A0">auckland · gmt+12</text>
+</svg>
