@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="NEWELL">
   <rect width="1200" height="300" fill="#0A0A0A"/>
 
-  <text x="40" y="44" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="16" xml:space="preserve"><tspan fill="#A0A0A0">jordan@aeon</tspan><tspan fill="#FFFFFF">:</tspan><tspan fill="#1AFF72">~</tspan><tspan fill="#FFFFFF">$ </tspan><tspan fill="#00FF41">status</tspan><tspan fill="#FFFFFF"> --role=engineer --locale=nz --ships=weekly</tspan></text>
+  <text x="40" y="44" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="16" xml:space="preserve"><tspan fill="#A0A0A0">jordan@newell</tspan><tspan fill="#FFFFFF">:</tspan><tspan fill="#1AFF72">~</tspan><tspan fill="#FFFFFF">$ </tspan><tspan fill="#00FF41">status</tspan><tspan fill="#FFFFFF"> --role=engineer --locale=nz --ships=weekly</tspan></text>
 
   <text x="1160" y="44" font-family="'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace" font-size="12" text-anchor="end"><tspan fill="#00FF41">● </tspan><tspan fill="#A0A0A0">live</tspan></text>
 
