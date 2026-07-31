@@ -1,8 +1,6 @@
 <p align="left">
-  <img src="hero.png" width="100%" alt="NEWELL">
+  <img src="hero.svg" width="100%" alt="NEWELL">
 </p>
-
-<br>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
@@ -60,8 +58,6 @@
     </td>
   </tr>
 </table>
-
-<br>
 
 <p align="right">
   <a href="https://jordannewell.com" title="Built by Jordan Newell">
