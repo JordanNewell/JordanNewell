@@ -64,5 +64,7 @@
 <br>
 
 <p align="right">
-  <img src="signoff-monogram.png" width="120" alt="— JN">
+  <a href="https://jordannewell.com" title="Built by Jordan Newell">
+    <img src="nmojibutton.png" width="72" alt="Built by Jordan Newell">
+  </a>
 </p>
