@@ -64,3 +64,6 @@
     <img src="nmojibutton.png" width="72" alt="Built by Jordan Newell">
   </a>
 </p>
+
+<sub><b>LICENSE</b></sub><br>
+Content and design © Jordan Newell. Code samples in linked repositories carry their own licenses (mostly MIT). This profile repository itself: all rights reserved.
