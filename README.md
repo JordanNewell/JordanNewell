@@ -64,3 +64,12 @@
     <img src="nmojibutton.png" width="72" alt="Built by Jordan Newell">
   </a>
 </p>
+
+## Contributing
+
+This is a personal profile repo. Issues welcome; PRs are usually not needed,
+but fixes to the README tables are appreciated.
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
