@@ -44,6 +44,8 @@ jobs:
               b = p.chromium.launch()
               page = b.new_page(viewport={"width": 1280, "height": 640})
               page.goto("file:///tmp/social-card.html")
+              page.wait_for_load_state("networkidle")
+              page.wait_for_timeout(500)  # let the SVG raster settle
               page.screenshot(path="assets/social-preview.png")
               b.close()
           EOF
