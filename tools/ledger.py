@@ -7,7 +7,13 @@ Palette + type are lifted from jordannewell.com's src/styles/global.css
 owns prose. Fonts come from the site's node_modules (@fontsource).
 
 Text is converted to SVG paths so the assets render identically everywhere
-GitHub can show them (no webfonts inside README images).
+GitHub can show them (no webfonts inside README images). Fonts are vendored
+in tools/fonts (JetBrains Mono + Newsreader, both SIL OFL) so this also
+runs in CI — see .github/workflows/refresh-ledger.yml, which re-renders
+everything monthly so the masthead dateline stays current.
+
+assets/social-preview.png is the GitHub social-share card; it is a rendered
+raster of assets/social.svg and needs a headless browser (see workflow).
 
 Usage: python tools/ledger.py  (run from repo root)
 """
@@ -21,9 +27,14 @@ from fontTools.pens.transformPen import TransformPen
 from fontTools.misc.transform import Transform
 
 REPO = Path(__file__).resolve().parent.parent
-SITE = Path(r"E:/dev/projects/jordannewell.com")
-FONTS = SITE / "node_modules" / "@fontsource"
 OUT = REPO / "assets"
+
+# Fonts are vendored in tools/fonts (copied from jordannewell.com's
+# fontsource packages — JetBrains Mono + Newsreader, both OFL) so this
+# runs in CI. Local site checkout used as fallback during development.
+FONTS = REPO / "tools" / "fonts"
+if not FONTS.exists():
+    FONTS = Path(r"E:/dev/projects/jordannewell.com/node_modules") / "@fontsource"
 
 # The Ledger — jordannewell.com global.css
 PAPER = "#FAFAF8"
@@ -87,8 +98,12 @@ class Face:
 
 
 def load_faces():
-    jb = FONTS / "jetbrains-mono" / "files"
-    nr = SITE / "node_modules" / "@fontsource-variable" / "newsreader" / "files"
+    if FONTS.name == "fonts":  # vendored layout
+        jb = FONTS
+        nr = FONTS
+    else:  # site node_modules layout
+        jb = FONTS / "jetbrains-mono" / "files"
+        nr = FONTS.parent / "@fontsource-variable" / "newsreader" / "files"
     return {
         "mono400": Face(jb / "jetbrains-mono-latin-400-normal.woff2"),
         "mono600": Face(jb / "jetbrains-mono-latin-600-normal.woff2"),
@@ -169,6 +184,32 @@ def rule_svg():
     return svg(W, 2, f'<rect width="{W}" height="1" fill="{BORDER}"/>')
 
 
+SW, SH = 1280, 640  # GitHub social preview card
+
+
+def social(f, today):
+    body = []
+    m = 72  # page margin
+    body.append(f["mono400"].draw("REGISTER OF PUBLIC WORK · " + today,
+                                  15, m, 92, MUTED, tracking=2.0))
+    d, _ = f["mono700"].line("JORDAN NEWELL", 128, tracking=-2.2)
+    body.append(f'<path transform="translate({m} 268)" fill="{INK}" d="{d}"/>')
+    body.append(f'<rect x="{m}" y="308" width="{SW - 2 * m}" height="3" fill="{RULE}"/>')
+    body.append(f["serif-i"].draw("Field notes from an operator shipping in public across sectors.",
+                                  30, m, 376, FG2))
+    body.append(f["mono400"].draw("One thing gets the attention. Everything else runs quiet.",
+                                  16, m, 418, MUTED))
+    # figures strip pinned to the bottom
+    body.append(hairline(SH - 150, x=m, w=SW - 2 * m))
+    items = [("53", "AI PROVIDERS WIRED"), ("17", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
+    col_w = (SW - 2 * m) / 3
+    for i, (num, cap) in enumerate(items):
+        x = m + i * col_w
+        body.append(f["mono700"].draw(num, 44, x, SH - 88, INK))
+        body.append(f["mono400"].draw(cap, 11.5, x, SH - 60, MUTED, tracking=1.5))
+    return svg(SW, SH, "".join(body))
+
+
 def n_sticker():
     """Official NEWELL N mark (brand-system construction) as a paper sticker —
     ink bars on paper with even padding, echoing the site footer's sticker-N."""
@@ -195,6 +236,7 @@ def main():
     (OUT / "figures.svg").write_text(figures(f))
     (OUT / "rule.svg").write_text(rule_svg())
     (OUT / "n-sticker.svg").write_text(n_sticker())
+    (OUT / "social.svg").write_text(social(f, today))
     # width report for overflow QC
     for idx, name, desc, tag, _ in ROWS:
         _, tw = f["mono600"].line(name, 17.5)

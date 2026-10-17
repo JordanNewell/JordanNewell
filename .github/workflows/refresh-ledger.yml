@@ -1,0 +1,61 @@
+name: refresh-ledger
+
+# Re-renders the ledger assets on the 1st of each month so the masthead
+# dateline ("UPDATED YYYY-MM-DD") never goes stale. Commits only when the
+# render actually changed.
+
+on:
+  schedule:
+    - cron: "37 9 1 * *" # 09:37 UTC on the 1st, off the busy marks
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install font tooling
+        run: pip install fonttools brotli
+
+      - name: Regenerate ledger assets
+        run: python tools/ledger.py
+
+      - name: Render social preview PNG
+        id: social
+        continue-on-error: true
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+          cat > /tmp/social-card.html <<'EOF'
+          <!doctype html><html><head><style>*{margin:0;padding:0;overflow:hidden}img{display:block;width:1280px;height:640px}</style></head>
+          <body><img src="file://$PWD/assets/social.svg"></body></html>
+          EOF
+          python - <<'EOF'
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              page = b.new_page(viewport={"width": 1280, "height": 640})
+              page.goto("file:///tmp/social-card.html")
+              page.screenshot(path="assets/social-preview.png")
+              b.close()
+          EOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh ledger for $(date -u +%Y-%m)"
+            git push
+          fi

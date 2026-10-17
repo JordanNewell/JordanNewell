@@ -42,5 +42,5 @@ In the wild: [curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://t
 </p>
 
 <p>
-  <a href="https://jordannewell.com"><img src="assets/n-sticker.svg" width="40" alt="jordannewell.com"></a>
+  <a href="https://jordannewell.com"><img src="assets/n-sticker.svg" width="44" alt="jordannewell.com"></a>
 </p>
