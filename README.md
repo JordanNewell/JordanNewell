@@ -1,66 +1,46 @@
-<p align="left">
-  <img src="hero.svg" width="100%" alt="NEWELL">
+<p>
+  <img src="assets/masthead.svg" width="100%" alt="Jordan Newell — register of public work">
 </p>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr>
-    <td width="58%" valign="top">
-      <sub><b>SHIPPED</b></sub>
-      <table cellpadding="4" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/curtis-ai-chat">curtis-ai-chat</a></code></td>
-          <td align="right"><sub>polyglot AI chat</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/curtis-compliance">curtis-compliance</a></code></td>
-          <td align="right"><sub>fintech compliance</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/harbormasterd">harbormasterd</a></code></td>
-          <td align="right"><sub>multi-vm orchestration</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/temporal-git">temporal-git</a></code></td>
-          <td align="right"><sub>time-travel for git</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/crypto-key-classifier">crypto-key-classifier</a></code></td>
-          <td align="right"><sub>key attribution</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/newell-typeface">newell-typeface</a></code></td>
-          <td align="right"><sub>geometric typeface</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/pat-scanner">pat-scanner</a></code></td>
-          <td align="right"><sub>PAT class scanner</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/token-hunt">token-hunt</a></code></td>
-          <td align="right"><sub>OSS secret scanner</sub></td>
-        </tr>
-      </table>
-    </td>
-    <td width="42%" valign="top" style="padding-left:32px">
-      <sub><b>OPERATIONS</b></sub>
-      <table cellpadding="4" cellspacing="0" border="0" width="100%">
-        <tr><td><code>fleet</code></td><td align="right"><sub>17 agents · 10 hosts</sub></td></tr>
-        <tr><td><code>matrix</code></td><td align="right"><sub>snikket · e2ee'd</sub></td></tr>
-        <tr><td><code>locale</code></td><td align="right"><sub>nz · gmt+12</sub></td></tr>
-      </table>
-      <br>
-      <sub><b>CONTACT</b></sub>
-      <table cellpadding="4" cellspacing="0" border="0" width="100%">
-        <tr><td><code><a href="https://jordannewell.com">site</a></code></td><td align="right"><sub><a href="https://jordannewell.com/posts/">blog</a></sub></td></tr>
-        <tr><td><code><a href="https://jordannewell.com/today/">today</a></code></td><td align="right"><sub><a href="https://status.jordannewell.com">status</a></sub></td></tr>
-        <tr><td><code><a href="https://github.com/sponsors/JordanNewell">sponsors</a></code></td><td align="right"><sub>★</sub></td></tr>
-      </table>
-    </td>
-  </tr>
-</table>
+<p>
+  <a href="https://jordannewell.com/">now</a>
+  <span>·</span>
+  <a href="https://jordannewell.com/products/">products</a>
+  <span>·</span>
+  <a href="https://jordannewell.com/posts/">posts</a>
+  <span>·</span>
+  <a href="https://jordannewell.com/rss.xml">rss</a>
+  <span>·</span>
+  <a href="https://github.com/sponsors/JordanNewell">sponsors</a>
+</p>
 
-<p align="right">
-  <a href="https://jordannewell.com" title="Built by Jordan Newell">
-    <img src="nmojibutton.png" width="72" alt="Built by Jordan Newell">
-  </a>
+<p>
+  <img src="assets/register-head.svg" width="100%" alt="Shipped">
+</p>
+
+<p>
+  <a href="https://github.com/JordanNewell/curtis"><img src="assets/row-01.svg" width="100%" alt="curtis — The agent for Obsidian"></a>
+  <a href="https://github.com/JordanNewell/dot_curt"><img src="assets/row-02.svg" width="100%" alt="dot_curt — the .curt conversation format"></a>
+  <a href="https://github.com/JordanNewell/curtis-ai-porter"><img src="assets/row-03.svg" width="100%" alt="curtis-ai-porter — port AI chat history"></a>
+  <a href="https://github.com/JordanNewell/curtis-ai-audit"><img src="assets/row-04.svg" width="100%" alt="curtis-ai-audit — append-only receipts"></a>
+  <a href="https://github.com/JordanNewell/token-hunt"><img src="assets/row-05.svg" width="100%" alt="token-hunt — catch secrets at chat time"></a>
+  <a href="https://github.com/JordanNewell/pat-scanner"><img src="assets/row-06.svg" width="100%" alt="pat-scanner — block credential leaks"></a>
+  <a href="https://github.com/JordanNewell/curtis-compliance"><img src="assets/row-07.svg" width="100%" alt="curtis-compliance — fintech compliance checks"></a>
+  <a href="https://github.com/JordanNewell/newell-typeface"><img src="assets/row-08.svg" width="100%" alt="newell-typeface — geometric display face"></a>
+</p>
+
+<p>
+  <img src="assets/figures.svg" width="100%" alt="53 AI providers wired · 17 fleet agents · 13 PAT classes blocked">
+</p>
+
+Earlier instruments: [`temporal-git`](https://github.com/JordanNewell/temporal-git) · [`harbormasterd`](https://github.com/JordanNewell/harbormasterd) · [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) · [`claudeway`](https://github.com/JordanNewell/claudeway) · [`interleaf`](https://github.com/JordanNewell/interleaf) · [`git-hygiene`](https://github.com/JordanNewell/git-hygiene)
+
+In the wild: [curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://tokenhunt.dev) · [getmedrecall.com](https://getmedrecall.com) · [interleaf.dev](https://interleaf.dev)
+
+<p>
+  <a href="https://jordannewell.com"><img src="assets/rule.svg" width="100%" alt=""></a>
+</p>
+
+<p>
+  <a href="https://jordannewell.com"><img src="assets/n-sticker.svg" width="40" alt="jordannewell.com"></a>
 </p>
