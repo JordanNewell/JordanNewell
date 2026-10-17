@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Generate the profile's ledger assets (SVG, text outlined to paths).
 
-Palette + type are lifted from jordannewell.com's src/styles/global.css
-("The Ledger"): paper #FAFAF8, ink #16161B, hairlines #E4E2DA, blue ink
-#1F4FD8, status green #0E8A4A. JetBrains Mono owns structure, Newsreader
-owns prose. Fonts come from the site's node_modules (@fontsource).
+Palette + type: NEWELL Brand System tokens (brand-system/tokens.json) in a
+dark "terminal ledger" remix of jordannewell.com's paper Ledger — OLED black
+#0A0A0A cards, white ink, #1F1F1F hairlines, neon green #00FF41 rules and
+tags. JetBrains Mono owns structure, Newsreader owns prose.
 
 Text is converted to SVG paths so the assets render identically everywhere
 GitHub can show them (no webfonts inside README images). Fonts are vendored
@@ -36,15 +36,16 @@ FONTS = REPO / "tools" / "fonts"
 if not FONTS.exists():
     FONTS = Path(r"E:/dev/projects/jordannewell.com/node_modules") / "@fontsource"
 
-# The Ledger — jordannewell.com global.css
-PAPER = "#FAFAF8"
-INK = "#16161B"
-FG2 = "#4A4852"
-MUTED = "#6E6A73"
-BORDER = "#E4E2DA"
-RULE = "#16161B"
-ACCENT = "#1F4FD8"
-GREEN = "#0E8A4A"
+# NEWELL Brand System tokens (brand-system/tokens.json) — dark "terminal
+# ledger" remix of The Ledger. Backgrounds go OLED black, ink goes white,
+# structural rules go neon green (green stays accent-only).
+PAPER = "#0A0A0A"   # card background
+INK = "#FFFFFF"     # primary type
+FG2 = "#A0A0A0"     # secondary type (muted token)
+MUTED = "#A0A0A0"
+BORDER = "#1F1F1F"  # hairlines between rows
+RULE = "#00FF41"    # structural rules (green accent)
+GREEN = "#00FF41"   # /tags
 
 W = 1012  # GitHub README content column
 
@@ -210,20 +211,6 @@ def social(f, today):
     return svg(SW, SH, "".join(body))
 
 
-def n_sticker():
-    """Official NEWELL N mark (brand-system construction) as a paper sticker —
-    ink bars on paper with even padding, echoing the site footer's sticker-N."""
-    import re
-    src = Path(r"e:/vaults/newell/10_PROJECTS/brand-system/logo/newell-n.svg").read_text()
-    src = re.sub(r"<rect[^>]*/>", "", src, count=1)  # drop the black bg rect
-    for c in ("#FFFFFF", "#ffffff", "white"):
-        src = src.replace(c, INK)
-    # re-frame: 990x755 art -> square-ish sticker with 90px paper padding
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-90 -90 1170 935" '
-            f'width="585" height="467.5"><rect x="-90" y="-90" width="1170" '
-            f'height="935" fill="{PAPER}"/>' + src.split(">", 1)[1].rsplit("</svg>", 1)[0] + "</svg>")
-
-
 def main():
     import datetime
     f = load_faces()
@@ -235,7 +222,6 @@ def main():
         (OUT / f"row-{i:02d}.svg").write_text(row(f, idx, name, desc, tag))
     (OUT / "figures.svg").write_text(figures(f))
     (OUT / "rule.svg").write_text(rule_svg())
-    (OUT / "n-sticker.svg").write_text(n_sticker())
     (OUT / "social.svg").write_text(social(f, today))
     # width report for overflow QC
     for idx, name, desc, tag, _ in ROWS:

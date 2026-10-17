@@ -33,7 +33,7 @@
   <img src="assets/figures.svg" width="100%" alt="53 AI providers wired · 17 fleet agents · 13 PAT classes blocked">
 </p>
 
-Earlier instruments: [`temporal-git`](https://github.com/JordanNewell/temporal-git) · [`harbormasterd`](https://github.com/JordanNewell/harbormasterd) · [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) · [`claudeway`](https://github.com/JordanNewell/claudeway) · [`interleaf`](https://github.com/JordanNewell/interleaf) · [`git-hygiene`](https://github.com/JordanNewell/git-hygiene)
+Earlier instruments: [`temporal-git`](https://github.com/JordanNewell/temporal-git) · [`harbormasterd`](https://github.com/JordanNewell/harbormasterd) · [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) · [`claudeway`](https://github.com/JordanNewell/tractum) · [`interleaf`](https://github.com/JordanNewell/interleaf) · [`git-hygiene`](https://github.com/JordanNewell/git-hygiene)
 
 In the wild: [curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://tokenhunt.dev) · [getmedrecall.com](https://getmedrecall.com) · [interleaf.dev](https://interleaf.dev)
 
@@ -42,5 +42,5 @@ In the wild: [curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://t
 </p>
 
 <p>
-  <a href="https://jordannewell.com"><img src="assets/n-sticker.svg" width="44" alt="jordannewell.com"></a>
+  <a href="https://jordannewell.com"><img src="assets/n-sticker.png" width="44" alt="jordannewell.com"></a>
 </p>
