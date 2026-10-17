@@ -34,12 +34,20 @@ jobs:
         run: |
           pip install playwright
           python -m playwright install --with-deps chromium
-          cat > /tmp/social-card.html <<'EOF'
-          <!doctype html><html><head><style>*{margin:0;padding:0;overflow:hidden}img{display:block;width:1280px;height:640px}</style></head>
-          <body><img src="file://$PWD/assets/social.svg"></body></html>
-          EOF
           python - <<'EOF'
+          import base64
+          from pathlib import Path
           from playwright.sync_api import sync_playwright
+
+          # Inline the SVG as a data URI: newer runner Chromium blocks
+          # file->file subresource loads from an unrelated directory.
+          svg = base64.b64encode(Path("assets/social.svg").read_bytes()).decode()
+          html = ("<!doctype html><html><head><style>*{margin:0;padding:0;"
+                  "overflow:hidden}img{display:block;width:1280px;height:640px}"
+                  "</style></head><body>"
+                  f'<img src="data:image/svg+xml;base64,{svg}"></body></html>')
+          Path("/tmp/social-card.html").write_text(html)
+
           with sync_playwright() as p:
               b = p.chromium.launch()
               page = b.new_page(viewport={"width": 1280, "height": 640})
@@ -48,6 +56,10 @@ jobs:
               page.wait_for_timeout(500)  # let the SVG raster settle
               page.screenshot(path="assets/social-preview.png")
               b.close()
+
+          out = Path("assets/social-preview.png")
+          if out.stat().st_size < 20000:
+              raise SystemExit("social preview suspiciously small — render failed")
           EOF
 
       - name: Commit if changed
