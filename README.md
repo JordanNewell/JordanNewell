@@ -44,3 +44,6 @@ In the wild: [curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://t
 <p>
   <a href="https://jordannewell.com"><img src="assets/n-sticker.png" width="44" alt="jordannewell.com"></a>
 </p>
+
+<sub><b>LICENSE</b></sub><br>
+Content and design © Jordan Newell. Code samples in linked repositories carry their own licenses (mostly MIT). This profile repository itself: all rights reserved.
