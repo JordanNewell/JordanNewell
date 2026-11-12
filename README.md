@@ -7,6 +7,8 @@
   <span>·</span>
   <a href="https://jordannewell.com/products/">products</a>
   <span>·</span>
+  <a href="https://jordannewell.com/papers/">papers</a>
+  <span>·</span>
   <a href="https://jordannewell.com/posts/">posts</a>
   <span>·</span>
   <a href="https://jordannewell.com/rss.xml">rss</a>
