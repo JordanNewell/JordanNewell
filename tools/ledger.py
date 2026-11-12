@@ -151,7 +151,7 @@ ROWS = [
     ("04", "curtis-ai-audit", "Append-only receipts for everything your agent touches.", "/receipts", "https://github.com/JordanNewell/curtis-ai-audit"),
     ("05", "token-hunt", "Catch secrets at chat time, not commit time.", "/security", "https://github.com/JordanNewell/token-hunt"),
     ("06", "pat-scanner", "Thirteen credential classes blocked before they reach the transcript.", "/security", "https://github.com/JordanNewell/pat-scanner"),
-    ("07", "curtis-compliance", "Fintech compliance checks with a hash-chained audit trail.", "/fintech", "https://github.com/JordanNewell/curtis-compliance"),
+    ("07", "openclaw-guru", "Expert OpenClaw subagent for Claude Code — knowledge kept fresh by machine.", "/agent", "https://github.com/JordanNewell/openclaw-guru"),
     ("08", "newell-typeface", "A geometric display face built from rails and 45-degree diagonals.", "/typeface", "https://github.com/JordanNewell/newell-typeface"),
 ]
 
@@ -170,7 +170,7 @@ def row(f, idx, name, desc, tag):
 
 
 def figures(f):
-    items = [("53", "AI PROVIDERS WIRED"), ("17", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
+    items = [("53", "AI PROVIDERS WIRED"), ("20", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
     body = [hairline(0)]
     col_w = W / 3
     for i, (num, cap) in enumerate(items):
@@ -202,7 +202,7 @@ def social(f, today):
                                   16, m, 418, MUTED))
     # figures strip pinned to the bottom
     body.append(hairline(SH - 150, x=m, w=SW - 2 * m))
-    items = [("53", "AI PROVIDERS WIRED"), ("17", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
+    items = [("53", "AI PROVIDERS WIRED"), ("20", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
     col_w = (SW - 2 * m) / 3
     for i, (num, cap) in enumerate(items):
         x = m + i * col_w

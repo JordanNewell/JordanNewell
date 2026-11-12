@@ -33,7 +33,7 @@
   <img src="assets/figures.svg" width="100%" alt="53 AI providers wired · 17 fleet agents · 13 PAT classes blocked">
 </p>
 
-Earlier instruments: [`temporal-git`](https://github.com/JordanNewell/temporal-git) · [`harbormasterd`](https://github.com/JordanNewell/harbormasterd) · [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) · [`claudeway`](https://github.com/JordanNewell/tractum) · [`interleaf`](https://github.com/JordanNewell/interleaf) · [`git-hygiene`](https://github.com/JordanNewell/git-hygiene)
+Earlier instruments: [`curtis-compliance`](https://github.com/JordanNewell/curtis-compliance) · [`curt-hermes`](https://github.com/JordanNewell/curt-hermes) · [`curt-busabase`](https://github.com/JordanNewell/curt-busabase) · [`curtis-acp`](https://github.com/JordanNewell/curtis-acp) · [`curt-webext`](https://github.com/JordanNewell/curt-webext) · [`curt-convert`](https://github.com/JordanNewell/curt-convert) · [`temporal-git`](https://github.com/JordanNewell/temporal-git) · [`harbormasterd`](https://github.com/JordanNewell/harbormasterd) · [`crypto-key-classifier`](https://github.com/JordanNewell/crypto-key-classifier) · [`claudeway`](https://github.com/JordanNewell/tractum) · [`interleaf`](https://github.com/JordanNewell/interleaf) · [`git-hygiene`](https://github.com/JordanNewell/git-hygiene)
 
 In the wild: [curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://tokenhunt.dev) · [getmedrecall.com](https://getmedrecall.com) · [interleaf.dev](https://interleaf.dev)
 
