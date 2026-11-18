@@ -13,9 +13,3 @@
 </p>
 
 **[curtis-ai-tech](https://github.com/curtis-ai-tech)** · **[dotcurt](https://github.com/dotcurt)** — the orgs
-
-<p>
-  <img src="assets/label-find.svg" alt="/find">
-</p>
-
-[now](https://jordannewell.com/) · [products](https://jordannewell.com/products/) · [papers](https://jordannewell.com/papers/) · [posts](https://jordannewell.com/posts/) · [rss](https://jordannewell.com/rss.xml) · [sponsors](https://github.com/sponsors/JordanNewell)

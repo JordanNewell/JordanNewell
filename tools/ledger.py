@@ -148,7 +148,7 @@ def main():
     f = load_faces()
     OUT.mkdir(exist_ok=True)
     (OUT / "social.svg").write_text(social(f))
-    for name in ("shipped", "elsewhere", "find"):
+    for name in ("shipped", "elsewhere"):
         (OUT / f"label-{name}.svg").write_text(label(f, "/" + name))
     print("assets ->", OUT)
 
