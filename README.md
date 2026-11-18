@@ -1,6 +1,4 @@
-<p>
-  <img src="assets/masthead.svg" width="100%" alt="Jordan Newell">
-</p>
+**Jordan Newell**
 
 <p>
   <img src="assets/label-shipped.svg" alt="/shipped">

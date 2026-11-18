@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the profile's masthead + social-preview assets (SVG, text outlined to paths).
+"""Generate the profile's social-preview card + /tag labels (SVG, text outlined to paths).
 
 Palette + type: NEWELL Brand System tokens (brand-system/tokens.json) in a
 dark "terminal ledger" remix of jordannewell.com's paper Ledger — OLED black
@@ -120,14 +120,6 @@ def svg(w, h, body, bg=PAPER):
             f'<rect width="{w}" height="{h}" fill="{bg}"/>{body}</svg>')
 
 
-def masthead(f):
-    body = []
-    d, w = f["mono700"].line("JORDAN NEWELL", 72, tracking=-1.4)
-    body.append(f'<path transform="translate(0 84)" fill="{INK}" d="{d}"/>')
-    body.append(f'<rect x="0" y="110" width="{W}" height="2" fill="{RULE}"/>')
-    return svg(W, 134, "".join(body))
-
-
 def label(f, text):
     """/tag section label: green slash, muted lowercase mono, transparent
     background so it sits on GitHub's theme (site's /tag language)."""
@@ -155,7 +147,6 @@ def social(f):
 def main():
     f = load_faces()
     OUT.mkdir(exist_ok=True)
-    (OUT / "masthead.svg").write_text(masthead(f))
     (OUT / "social.svg").write_text(social(f))
     for name in ("shipped", "elsewhere", "find"):
         (OUT / f"label-{name}.svg").write_text(label(f, "/" + name))
