@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate the profile's ledger assets (SVG, text outlined to paths).
+"""Generate the profile's masthead + social-preview assets (SVG, text outlined to paths).
 
 Palette + type: NEWELL Brand System tokens (brand-system/tokens.json) in a
 dark "terminal ledger" remix of jordannewell.com's paper Ledger — OLED black
-#0A0A0A cards, white ink, #1F1F1F hairlines, neon green #00FF41 rules and
-tags. JetBrains Mono owns structure, Newsreader owns prose.
+#0A0A0A canvas, white ink, neon green #00FF41 rule. JetBrains Mono owns
+structure, Newsreader owns prose.
 
 Text is converted to SVG paths so the assets render identically everywhere
 GitHub can show them (no webfonts inside README images). Fonts are vendored
@@ -120,10 +120,6 @@ def svg(w, h, body, bg=PAPER):
             f'<rect width="{w}" height="{h}" fill="{bg}"/>{body}</svg>')
 
 
-def hairline(y, x=0, w=W, color=BORDER):
-    return f'<rect x="{x}" y="{y}" width="{w}" height="1" fill="{color}"/>'
-
-
 def masthead(f, today):
     body = []
     body.append(f["mono400"].draw("REGISTER OF PUBLIC WORK · UPDATED " + today,
@@ -136,53 +132,6 @@ def masthead(f, today):
     body.append(f["mono400"].draw("One thing gets the attention. Everything else runs quiet.",
                                   13.5, 0, 214, MUTED))
     return svg(W, 238, "".join(body))
-
-
-def register_head(f):
-    body = f["mono400"].draw("SHIPPED", 12.5, 0, 22, MUTED, tracking=1.6)
-    body += f'<rect x="0" y="38" width="{W}" height="2" fill="{RULE}"/>'
-    return svg(W, 40, body)
-
-
-ROWS = [
-    ("01", "curtis", "The agent for Obsidian — 53 providers, local-first, everything on the record.", "/agent", "https://github.com/JordanNewell/curtis"),
-    ("02", "dot_curt", "A single-file conversation format machines can verify.", "/standard", "https://github.com/JordanNewell/dot_curt"),
-    ("03", "curtis-ai-porter", "AI chat history in, .curt and markdown out — nothing leaves your machine.", "/portable", "https://github.com/JordanNewell/curtis-ai-porter"),
-    ("04", "curtis-ai-audit", "Append-only receipts for everything your agent touches.", "/receipts", "https://github.com/JordanNewell/curtis-ai-audit"),
-    ("05", "token-hunt", "Catch secrets at chat time, not commit time.", "/security", "https://github.com/JordanNewell/token-hunt"),
-    ("06", "pat-scanner", "Thirteen credential classes blocked before they reach the transcript.", "/security", "https://github.com/JordanNewell/pat-scanner"),
-    ("07", "openclaw-guru", "Expert OpenClaw subagent for Claude Code — knowledge kept fresh by machine.", "/agent", "https://github.com/JordanNewell/openclaw-guru"),
-    ("08", "newell-typeface", "A geometric display face built from rails and 45-degree diagonals.", "/typeface", "https://github.com/JordanNewell/newell-typeface"),
-]
-
-ROW_H = 92
-
-
-def row(f, idx, name, desc, tag):
-    body = []
-    body.append(f["mono400"].draw(idx, 12.5, 0, 38, MUTED, tracking=1.2))
-    body.append(f["mono600"].draw(name, 17.5, 120, 38, INK))
-    # tag right-aligned on the title line, green like the site's /tags
-    body.append(f["mono400"].draw(tag, 12.5, W - 24, 37, GREEN, anchor="end"))
-    body.append(f["serif"].draw(desc, 16, 120, 66, MUTED))
-    body.append(hairline(ROW_H - 1))
-    return svg(W, ROW_H, "".join(body))
-
-
-def figures(f):
-    items = [("53", "AI PROVIDERS WIRED"), ("20", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
-    body = [hairline(0)]
-    col_w = W / 3
-    for i, (num, cap) in enumerate(items):
-        x = i * col_w
-        body.append(f["mono700"].draw(num, 48, x, 66, INK))
-        body.append(f["mono400"].draw(cap, 11, x, 92, MUTED, tracking=1.5))
-    body.append(hairline(118))
-    return svg(W, 120, "".join(body))
-
-
-def rule_svg():
-    return svg(W, 2, f'<rect width="{W}" height="1" fill="{BORDER}"/>')
 
 
 SW, SH = 1280, 640  # GitHub social preview card
@@ -200,14 +149,6 @@ def social(f, today):
                                   30, m, 376, FG2))
     body.append(f["mono400"].draw("One thing gets the attention. Everything else runs quiet.",
                                   16, m, 418, MUTED))
-    # figures strip pinned to the bottom
-    body.append(hairline(SH - 150, x=m, w=SW - 2 * m))
-    items = [("53", "AI PROVIDERS WIRED"), ("20", "FLEET AGENTS"), ("13", "PAT CLASSES BLOCKED")]
-    col_w = (SW - 2 * m) / 3
-    for i, (num, cap) in enumerate(items):
-        x = m + i * col_w
-        body.append(f["mono700"].draw(num, 44, x, SH - 88, INK))
-        body.append(f["mono400"].draw(cap, 11.5, x, SH - 60, MUTED, tracking=1.5))
     return svg(SW, SH, "".join(body))
 
 
@@ -217,19 +158,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     today = datetime.date.today().strftime("%Y-%m-%d")
     (OUT / "masthead.svg").write_text(masthead(f, today))
-    (OUT / "register-head.svg").write_text(register_head(f))
-    for i, (idx, name, desc, tag, _) in enumerate(ROWS, 1):
-        (OUT / f"row-{i:02d}.svg").write_text(row(f, idx, name, desc, tag))
-    (OUT / "figures.svg").write_text(figures(f))
-    (OUT / "rule.svg").write_text(rule_svg())
     (OUT / "social.svg").write_text(social(f, today))
-    # width report for overflow QC
-    for idx, name, desc, tag, _ in ROWS:
-        _, tw = f["mono600"].line(name, 17.5)
-        _, dw = f["serif"].line(desc, 16)
-        _, gw = f["mono400"].line(tag, 12.5)
-        status = "OK " if 120 + max(tw, dw) < W - gw - 24 else "TIGHT"
-        print(f"{status} {name:<20} desc {dw:5.0f}px  title {tw:5.0f}px  tag {gw:4.0f}px")
     print("assets ->", OUT)
 
 
