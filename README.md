@@ -8,15 +8,13 @@
 
 **[curtis](https://github.com/curtis-ai-tech/curtis)** — AI chat for Obsidian<br>
 **[dot_curt](https://github.com/dotcurt/dot_curt)** — the `.curt` conversation format<br>
-**[newell-typeface](https://github.com/JordanNewell/newell-typeface)** — geometric display face<br>
-also [token-hunt](https://github.com/JordanNewell/token-hunt) · [pat-scanner](https://github.com/JordanNewell/pat-scanner) · [curtis-compliance](https://github.com/curtis-ai-tech/curtis-compliance)
+**[newell-typeface](https://github.com/JordanNewell/newell-typeface)** — geometric display face
 
 <p>
   <img src="assets/label-elsewhere.svg" alt="/elsewhere">
 </p>
 
-**[curtis-ai-tech](https://github.com/curtis-ai-tech)** · **[dotcurt](https://github.com/dotcurt)** — the orgs<br>
-[curtisai.tech](https://curtisai.tech) · [tokenhunt.dev](https://tokenhunt.dev) · [getmedrecall.com](https://getmedrecall.com) · [interleaf.dev](https://interleaf.dev)
+**[curtis-ai-tech](https://github.com/curtis-ai-tech)** · **[dotcurt](https://github.com/dotcurt)** — the orgs
 
 <p>
   <img src="assets/label-find.svg" alt="/find">
