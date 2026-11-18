@@ -10,7 +10,7 @@ Text is converted to SVG paths so the assets render identically everywhere
 GitHub can show them (no webfonts inside README images). Fonts are vendored
 in tools/fonts (JetBrains Mono + Newsreader, both SIL OFL) so this also
 runs in CI — see .github/workflows/refresh-ledger.yml, which re-renders
-everything monthly so the masthead dateline stays current.
+both assets monthly.
 
 assets/social-preview.png is the GitHub social-share card; it is a rendered
 raster of assets/social.svg and needs a headless browser (see workflow).
@@ -120,45 +120,31 @@ def svg(w, h, body, bg=PAPER):
             f'<rect width="{w}" height="{h}" fill="{bg}"/>{body}</svg>')
 
 
-def masthead(f, today):
+def masthead(f):
     body = []
-    body.append(f["mono400"].draw("REGISTER OF PUBLIC WORK · UPDATED " + today,
-                                  12.5, 0, 26, MUTED, tracking=1.6))
     d, w = f["mono700"].line("JORDAN NEWELL", 72, tracking=-1.4)
-    body.append(f'<path transform="translate(0 118)" fill="{INK}" d="{d}"/>')
-    body.append(f'<rect x="0" y="136" width="{W}" height="2" fill="{RULE}"/>')
-    body.append(f["serif-i"].draw("Field notes from an operator shipping in public across sectors.",
-                                  22, 0, 180, FG2))
-    body.append(f["mono400"].draw("One thing gets the attention. Everything else runs quiet.",
-                                  13.5, 0, 214, MUTED))
-    return svg(W, 238, "".join(body))
+    body.append(f'<path transform="translate(0 84)" fill="{INK}" d="{d}"/>')
+    body.append(f'<rect x="0" y="110" width="{W}" height="2" fill="{RULE}"/>')
+    return svg(W, 134, "".join(body))
 
 
 SW, SH = 1280, 640  # GitHub social preview card
 
 
-def social(f, today):
+def social(f):
     body = []
     m = 72  # page margin
-    body.append(f["mono400"].draw("REGISTER OF PUBLIC WORK · " + today,
-                                  15, m, 92, MUTED, tracking=2.0))
     d, _ = f["mono700"].line("JORDAN NEWELL", 128, tracking=-2.2)
-    body.append(f'<path transform="translate({m} 268)" fill="{INK}" d="{d}"/>')
-    body.append(f'<rect x="{m}" y="308" width="{SW - 2 * m}" height="3" fill="{RULE}"/>')
-    body.append(f["serif-i"].draw("Field notes from an operator shipping in public across sectors.",
-                                  30, m, 376, FG2))
-    body.append(f["mono400"].draw("One thing gets the attention. Everything else runs quiet.",
-                                  16, m, 418, MUTED))
+    body.append(f'<path transform="translate({m} 300)" fill="{INK}" d="{d}"/>')
+    body.append(f'<rect x="{m}" y="340" width="{SW - 2 * m}" height="3" fill="{RULE}"/>')
     return svg(SW, SH, "".join(body))
 
 
 def main():
-    import datetime
     f = load_faces()
     OUT.mkdir(exist_ok=True)
-    today = datetime.date.today().strftime("%Y-%m-%d")
-    (OUT / "masthead.svg").write_text(masthead(f, today))
-    (OUT / "social.svg").write_text(social(f, today))
+    (OUT / "masthead.svg").write_text(masthead(f))
+    (OUT / "social.svg").write_text(social(f))
     print("assets ->", OUT)
 
 
