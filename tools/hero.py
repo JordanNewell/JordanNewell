@@ -57,7 +57,7 @@ def wordmark(gs, cmap, upem):
         inks[ch] = bp.bounds
     ink_w = sum(inks[c][2] - inks[c][0] for c in WORDMARK)
     total = ink_w + GAP * (len(WORDMARK) - 1)
-    s = min(BAND_W / total, BAND_H / ((INK_TOP - INK_BOT) / upem)) / upem
+    s = min(BAND_W / total, BAND_H / (INK_TOP - INK_BOT))  # px per glyph unit
     baseline = BAND_Y + (BAND_H - (INK_TOP - INK_BOT) * s) / 2 + INK_TOP * s
     cursor = BAND_X + (BAND_W - total * s) / 2  # left ink edge, in px
 
