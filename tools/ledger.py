@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the profile's social-preview card + /tag labels (SVG, text outlined to paths).
+"""Generate the profile's social-preview card (SVG, text outlined to paths).
 
 Palette + type: NEWELL Brand System tokens (brand-system/tokens.json) in a
 dark "terminal ledger" remix of jordannewell.com's paper Ledger — OLED black
@@ -120,18 +120,6 @@ def svg(w, h, body, bg=PAPER):
             f'<rect width="{w}" height="{h}" fill="{bg}"/>{body}</svg>')
 
 
-def label(f, text):
-    """/tag section label: green slash, muted lowercase mono, transparent
-    background so it sits on GitHub's theme (site's /tag language)."""
-    size, tracking, lh = 13, 1.0, 16
-    slash_d, slash_w = f["mono400"].line("/", size, tracking)
-    rest_d, rest_w = f["mono400"].line(text[1:], size, tracking)
-    body = (f'<path transform="translate(0 {lh - 4})" fill="{GREEN}" d="{slash_d}"/>'
-            f'<path transform="translate({slash_w:.2f} {lh - 4})" fill="{MUTED}" d="{rest_d}"/>')
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {slash_w + rest_w:.0f} {lh}" '
-            f'width="{slash_w + rest_w:.0f}" height="{lh}">{body}</svg>')
-
-
 SW, SH = 1280, 640  # GitHub social preview card
 
 
@@ -148,8 +136,6 @@ def main():
     f = load_faces()
     OUT.mkdir(exist_ok=True)
     (OUT / "social.svg").write_text(social(f))
-    for name in ("shipped", "elsewhere"):
-        (OUT / f"label-{name}.svg").write_text(label(f, "/" + name))
     print("assets ->", OUT)
 
 
