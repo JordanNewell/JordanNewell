@@ -114,7 +114,10 @@ def render(W, H, band, top_y, rule_y, bar_y, out_scale=1.0):
     body.append(
         f'<text x="{W - MARGIN}" y="276" font-family="{mono}" font-size="13" text-anchor="end" fill="{MUTED}">et</text>'
     )
-    out = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="NEWELL">'
+    # explicit width/height: dimensionless SVGs render blank in the mobile
+    # app's image pipeline (it won't size from viewBox alone)
+    out = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
+           f'width="{W}" height="{H}" role="img" aria-label="NEWELL">'
            f'<defs>{defs}</defs>'
            f'<rect width="{W}" height="{H}" fill="#0A0A0A"/>{"".join(body)}</svg>')
     return out
