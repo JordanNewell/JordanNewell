@@ -37,26 +37,38 @@ def face():
 
 
 def wordmark_paths(gs, cmap, hmtx, upem, size):
-    """Outlined NEWELL laid out by real advances, scaled to fit BAND_W wide,
-    vertically centered in the band by ink extent (ink = -110..810 in v0.2)."""
+    """Outlined NEWELL, laid out by INK edges with a constant optical gap.
+
+    v0.2 Black's advances are uneven (N–E ink gap 179u vs 290u around W/L),
+    which reads as "NE WELL" — so instead of advances we place each glyph's
+    ink edge at cursor + GAP. Green bar offsets are relative to glyph origin,
+    which we derive per glyph from its ink left edge."""
+    from fontTools.pens.boundsPen import BoundsPen
     scale = size / upem
-    # measure
-    adv = sum(hmtx[cmap[ord(c)]][0] for c in WORDMARK) * scale
+    GAP = 185  # uniform inter-letter ink gap (glyph units)
+    inks = {}
+    for ch in WORDMARK:
+        bp = BoundsPen(gs)
+        gs[cmap[ord(ch)]].draw(bp)
+        inks[ch] = bp.bounds  # (x0, y0, x1, y1) — rectilinear glyphs, exact
+    ink_w = sum(inks[c][2] - inks[c][0] for c in WORDMARK)
+    total = ink_w + GAP * (len(WORDMARK) - 1)
     ink_top, ink_bot = 810, -110  # v0.2 cap + overshoot extents
-    s = min(BAND_W / (adv / scale), BAND_H / ((ink_top - ink_bot) * scale)) * scale
+    s = min(BAND_W / total, BAND_H / ((ink_top - ink_bot) * scale)) * scale
     baseline = BAND_Y + (BAND_H - (ink_top - ink_bot) * s) / 2 + ink_top * s
-    x = BAND_X + (BAND_W - adv * (s / scale)) / 2
+    x = BAND_X + (BAND_W - total * s) / 2  # cursor = left ink edge
     parts = []
     for ch in WORDMARK:
-        g = cmap[ord(ch)]
+        x0, _, x1, _ = inks[ch]
+        ox = x - x0 * s  # glyph origin so ink starts at cursor
         pen = SVGPathPen(gs)
-        tpen = TransformPen(pen, Transform(s, 0, 0, -s, x, baseline))
-        gs[g].draw(tpen)
+        tpen = TransformPen(pen, Transform(s, 0, 0, -s, ox, baseline))
+        gs[cmap[ord(ch)]].draw(tpen)
         parts.append(f'<path d="{pen.getCommands()}" fill="{INK}"/>')
         if ch == "E":
             # OG treatment: the E's three bars as green blocks
             # v0.2 Black bar geometry: x 90..475, bars y -110..110 / 240..460 / 590..810
-            bx = x + 200 * s
+            bx = ox + 200 * s
             bw = 275 * s
             for y0, y1 in ((-110, 110), (240, 460), (590, 810)):
                 ry = baseline - y1 * s
@@ -64,10 +76,10 @@ def wordmark_paths(gs, cmap, hmtx, upem, size):
                              f'height="{(y1 - y0) * s:.2f}" fill="{GREEN}"/>')
         if ch == "L":
             # L bottom bar green, matching the E treatment (bar = y -110..110)
-            bx = x + 200 * s
+            bx = ox + 200 * s
             parts.append(f'<rect x="{bx:.2f}" y="{baseline - 110 * s:.2f}" width="{275 * s:.2f}" '
                          f'height="{220 * s:.2f}" fill="{GREEN}"/>')
-        x += hmtx[g][0] * s
+        x += (x1 - x0) * s + GAP * s
     return "".join(parts)
 
 
