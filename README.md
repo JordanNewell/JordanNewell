@@ -15,8 +15,8 @@ I build local-first AI tooling — chat that stays on your machine, formats mach
 
 ## /also-shipping
 
-- [**token-hunt**](https://github.com/JordanNewell/token-hunt) — catch secrets at chat time, not commit time
-- [**pat-scanner**](https://github.com/JordanNewell/pat-scanner) — credential classes blocked before they reach the transcript
+- [**token-hunt**](https://github.com/tokenhunt/token-hunt) — catch secrets at chat time, not commit time
+- [**pat-scanner**](https://github.com/tokenhunt/pat-scanner) — credential classes blocked before they reach the transcript
 - [**curtis-ai-audit**](https://github.com/curtis-ai-tech/curtis-ai-audit) — append-only receipts for everything your agent touches
 - [**curtis-ai-porter**](https://github.com/curtis-ai-tech/curtis-ai-porter) — chat history in, `.curt` and markdown out, nothing leaves your machine
 - [**curtis-acp**](https://github.com/curtis-ai-tech/curtis-acp) — Curtis inside Zed and any ACP client
