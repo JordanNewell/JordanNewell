@@ -24,6 +24,7 @@ from fontTools.misc.transform import Transform
 
 REPO = Path(__file__).resolve().parent.parent
 OUT = REPO / "assets" / "hero.svg"
+SOCIAL = REPO / "assets" / "social.svg"
 FONT = REPO / "tools" / "fonts" / "Newell-Black.ttf"
 
 W, H = 1200, 300
@@ -48,7 +49,8 @@ def face():
     return f.getGlyphSet(), f.getBestCmap(), f["head"].unitsPerEm
 
 
-def wordmark(gs, cmap, upem):
+def wordmark(gs, cmap, upem, band=(120, 76, 960, 170)):
+    BAND_X, BAND_Y, BAND_W, BAND_H = band
     """Lay out NEWELL by ink edges; white glyphs + green bar overlays."""
     inks = {}
     for ch in WORDMARK:
@@ -85,38 +87,46 @@ def wordmark(gs, cmap, upem):
     return "".join(defs), "".join(body)
 
 
-def main():
+def render(W, H, band, top_y, rule_y, bar_y, out_scale=1.0):
     gs, cmap, upem = face()
-    defs, mark = wordmark(gs, cmap, upem)
+    defs, mark = wordmark(gs, cmap, upem, band)
     mono = "'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,monospace"
+    m = MARGIN if W == 1200 else 80
+    ty = top_y
     body = []
     body.append(
-        f'<text x="{MARGIN}" y="44" font-family="{mono}" font-size="16" xml:space="preserve">'
+        f'<text x="{m}" y="{ty}" font-family="{mono}" font-size="{16 * out_scale:.0f}" xml:space="preserve">'
         f'<tspan fill="{MUTED}">jordan@newell</tspan><tspan fill="{INK}">:</tspan>'
         f'<tspan fill="{ACCENT}">~</tspan><tspan fill="{INK}">$ </tspan>'
         f'<tspan fill="{GREEN}">status</tspan><tspan fill="{INK}"> {STATUS}</tspan></text>'
     )
     body.append(
-        f'<text x="{W - MARGIN}" y="44" font-family="{mono}" font-size="12" text-anchor="end">'
+        f'<text x="{W - m}" y="{ty}" font-family="{mono}" font-size="{12 * out_scale:.0f}" text-anchor="end">'
         f'<tspan fill="{GREEN}">● </tspan><tspan fill="{MUTED}">live</tspan></text>'
     )
-    body.append(f'<line x1="{MARGIN}" y1="64" x2="{W - MARGIN}" y2="64" stroke="{BORDER}" stroke-width="1"/>')
+    body.append(f'<line x1="{m}" y1="{rule_y}" x2="{W - m}" y2="{rule_y}" stroke="{BORDER}" stroke-width="1"/>')
     body.append(mark)
     body.append(
-        f'<text x="{MARGIN}" y="276" font-family="{mono}" font-size="13" xml:space="preserve">'
+        f'<text x="{m}" y="{bar_y}" font-family="{mono}" font-size="{13 * out_scale:.0f}" xml:space="preserve">'
         f'<tspan fill="{GREEN}">[ ok ]</tspan><tspan fill="{MUTED}"> · </tspan>'
         f'<tspan fill="{INK}">fleet</tspan></text>'
     )
     body.append(
-        f'<text x="{W - MARGIN}" y="276" font-family="{mono}" font-size="13" text-anchor="end" fill="{MUTED}">new york · et</text>'
+        f'<text x="{W - MARGIN}" y="276" font-family="{mono}" font-size="13" text-anchor="end" fill="{MUTED}">et</text>'
     )
-    OUT.write_text(
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="NEWELL">'
-        f'<defs>{defs}</defs>'
-        f'<rect width="{W}" height="{H}" fill="#0A0A0A"/>{"".join(body)}</svg>',
-        encoding="utf-8",
-    )
+    out = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" role="img" aria-label="NEWELL">'
+           f'<defs>{defs}</defs>'
+           f'<rect width="{W}" height="{H}" fill="#0A0A0A"/>{"".join(body)}</svg>')
+    return out
+
+
+def main():
+    OUT.write_text(render(1200, 300, (120, 76, 960, 170), 44, 64, 276), encoding="utf-8")
     print("hero ->", OUT)
+    # social card: same design, 1280x640, scaled up ~1.6x
+    sc = 1.6
+    SOCIAL.write_text(render(1280, 640, (110, 210, 1060, 300), 88, 122, 588, sc), encoding="utf-8")
+    print("social ->", SOCIAL)
 
 
 if __name__ == "__main__":

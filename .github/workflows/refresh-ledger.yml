@@ -25,10 +25,8 @@ jobs:
       - name: Install font tooling
         run: pip install fonttools brotli
 
-      - name: Regenerate ledger assets
-        run: |
-          python tools/ledger.py
-          python tools/hero.py
+      - name: Regenerate hero + social assets
+        run: python tools/hero.py
 
       - name: Render social preview PNG
         id: social

@@ -2,64 +2,29 @@
   <img src="assets/hero.svg" width="100%" alt="NEWELL">
 </p>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr>
-    <td width="58%" valign="top">
-      <sub><b>SHIPPED</b></sub>
-      <table cellpadding="4" cellspacing="0" border="0" width="100%">
-        <tr>
-          <td><code><a href="https://github.com/curtis-ai-tech/curtis">curtis</a></code></td>
-          <td align="right"><sub>AI chat for Obsidian</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/dotcurt/dot_curt">dot_curt</a></code></td>
-          <td align="right"><sub>the .curt conversation format</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/newell-typeface">newell-typeface</a></code></td>
-          <td align="right"><sub>geometric display face</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/token-hunt">token-hunt</a></code></td>
-          <td align="right"><sub>catch secrets at chat time</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/pat-scanner">pat-scanner</a></code></td>
-          <td align="right"><sub>credential leak blocking</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/curtis-ai-tech/curtis-compliance">curtis-compliance</a></code></td>
-          <td align="right"><sub>fintech compliance checks</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/temporal-git">temporal-git</a></code></td>
-          <td align="right"><sub>time-travel for git</sub></td>
-        </tr>
-        <tr>
-          <td><code><a href="https://github.com/JordanNewell/harbormasterd">harbormasterd</a></code></td>
-          <td align="right"><sub>multi-vm orchestration</sub></td>
-        </tr>
-      </table>
-      <br>
-      <sub><a href="https://github.com/JordanNewell/crypto-key-classifier"><code>crypto-key-classifier</code></a> · <a href="https://github.com/JordanNewell/tractum"><code>tractum</code></a> · <a href="https://github.com/JordanNewell/interleaf"><code>interleaf</code></a> · <a href="https://github.com/JordanNewell/git-hygiene"><code>git-hygiene</code></a></sub><br>
-      <sub>other</sub>
-    </td>
-    <td width="42%" valign="top" style="padding-left:32px">
-      <sub><b>OPERATIONS</b></sub>
-      <table cellpadding="4" cellspacing="0" border="0" width="100%">
-        <tr><td><code>fleet</code></td><td align="right"><sub>running</sub></td></tr>
-        <tr><td><code>locale</code></td><td align="right"><sub>new york · et</sub></td></tr>
-      </table>
-      <br>
-      <sub><b>CONTACT</b></sub>
-      <table cellpadding="4" cellspacing="0" border="0" width="100%">
-        <tr><td><code><a href="https://jordannewell.com">site</a></code></td><td align="right"><sub><a href="https://jordannewell.com">jordannewell.com</a></sub></td></tr>
-        <tr><td><code><a href="https://jordannewell.com/posts/">posts</a></code></td><td align="right"><sub><a href="https://jordannewell.com/posts/">/posts</a> · <a href="https://jordannewell.com/rss.xml">rss</a></sub></td></tr>
-        <tr><td><code><a href="https://jordannewell.com/papers/">papers</a></code></td><td align="right"><sub><a href="https://jordannewell.com/papers/">/papers</a> · <a href="https://orcid.org/0009-0003-5003-5949">orcid</a></sub></td></tr>
-      </table>
-    </td>
-  </tr>
-</table>
+**Eastern Time** · founder of [@curtis-ai-tech](https://github.com/curtis-ai-tech) and [@dotcurt](https://github.com/dotcurt) · everything runs on files I own
+
+I build local-first AI tooling — chat that stays on your machine, formats machines can verify, and receipts for everything agents touch. One thing gets the attention. Everything else runs quiet.
+
+## /start-here
+
+- [**curtis**](https://github.com/curtis-ai-tech/curtis) — AI chat for Obsidian. Polyglot, local-first, on the record.
+- [**dot_curt**](https://github.com/dotcurt/dot_curt) — the `.curt` conversation format. One file, one conversation, kept whole.
+- [**newell-typeface**](https://github.com/JordanNewell/newell-typeface) — geometric display face built from rails and 45° diagonals.
+
+## /also-shipping
+
+- [**token-hunt**](https://github.com/JordanNewell/token-hunt) — catch secrets at chat time, not commit time
+- [**pat-scanner**](https://github.com/JordanNewell/pat-scanner) — credential classes blocked before they reach the transcript
+- [**curtis-ai-audit**](https://github.com/curtis-ai-tech/curtis-ai-audit) — append-only receipts for everything your agent touches
+- [**curtis-ai-porter**](https://github.com/curtis-ai-tech/curtis-ai-porter) — chat history in, `.curt` and markdown out, nothing leaves your machine
+- [**curtis-acp**](https://github.com/curtis-ai-tech/curtis-acp) — Curtis inside Zed and any ACP client
+- [**curtis-compliance**](https://github.com/curtis-ai-tech/curtis-compliance) — HIPAA / SOC2 / PCI-DSS citations for fintech code
+- [**openclaw-guru**](https://github.com/JordanNewell/openclaw-guru) — expert OpenClaw subagent; knowledge kept fresh by machine
+
+## /writing
+
+[papers](https://jordannewell.com/papers/) · [posts](https://jordannewell.com/posts/) · [rss](https://jordannewell.com/rss.xml) — ORCID [0009-0003-5003-5949](https://orcid.org/0009-0003-5003-5949)
 
 <p>
   <img src="assets/pixel-divider.svg" width="100%" alt="">
