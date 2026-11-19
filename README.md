@@ -11,6 +11,7 @@ I build local-first AI tooling — chat that stays on your machine, formats mach
 - [**curtis**](https://github.com/curtis-ai-tech/curtis) — AI chat for Obsidian. Polyglot, local-first, on the record.
 - [**dot_curt**](https://github.com/dotcurt/dot_curt) — the `.curt` conversation format. One file, one conversation, kept whole.
 - [**newell-typeface**](https://github.com/JordanNewell/newell-typeface) — geometric display face built from rails and 45° diagonals.
+- [**tangent-typeface**](https://github.com/JordanNewell/tangent-typeface) — Newell's sibling: rails, 45° diagonals, perfect-circle arcs.
 
 ## /also-shipping
 
