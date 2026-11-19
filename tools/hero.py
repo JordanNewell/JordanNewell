@@ -39,7 +39,8 @@ WORDMARK = "NEWELL"
 BAND_X, BAND_Y, BAND_W, BAND_H = 120, 76, 960, 170  # wordmark fit box
 GAP = 185          # uniform inter-letter ink gap (glyph units)
 INK_TOP, INK_BOT = 810, -110  # v0.2 cap + overshoot extents
-BAR_TIP_FROM = 200  # green starts this far into the glyph (past stem edge)
+BAR_TIP_FROM = 310  # green starts at the stem's right edge (stem = 90..310u),
+                    # so bars read fully green with white stems — the OG treatment
 
 
 def face():
