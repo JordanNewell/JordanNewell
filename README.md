@@ -2,9 +2,9 @@
   <img src="assets/hero.svg" width="100%" alt="NEWELL">
 </p>
 
-**Eastern Time** · founder of [@curtis-ai-tech](https://github.com/curtis-ai-tech) · [@dotcurt](https://github.com/dotcurt) · [@leverframe](https://github.com/leverframe) · [@idiomark](https://github.com/idiomark) · [@tokenhunt](https://github.com/tokenhunt) · [@humannewell](https://github.com/humannewell) · everything runs on files I own
+**Eastern Time** · building local-first AI tooling — everything runs on files I own, mostly on [@leverframe](https://github.com/leverframe)
 
-I build local-first AI tooling — chat that stays on your machine, formats machines can verify, and receipts for everything agents touch. One thing gets the attention. Everything else runs quiet.
+Chat that stays on your machine, formats machines can verify, receipts for everything agents touch. One thing gets the attention. Everything else runs quiet.
 
 ## /orgs
 
