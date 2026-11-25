@@ -12,13 +12,14 @@ Chat that stays on your machine, formats machines can verify, receipts for every
 - [**dotcurt**](https://github.com/dotcurt) — the open single-file format for AI conversations. [dot_curt](https://github.com/dotcurt/dot_curt): one file, one conversation, kept whole.
 - [**leverframe**](https://github.com/leverframe) — agent infrastructure. [tractum](https://github.com/leverframe/tractum): verifiable multi-agent consensus · [wranglebot](https://github.com/leverframe/wranglebot): deterministic guardrails for coding agents · [skillguard](https://github.com/leverframe/skillguard): signed plugin directory.
 - [**idiomark**](https://github.com/idiomark) — the personality format for AI. A portable `.idiomark` file: how a person speaks and thinks, portable to any system.
+- [**newellart**](https://github.com/newellart) — typefaces. [newell-typeface](https://github.com/newellart/newell-typeface): geometric display face built from rails and 45° diagonals · [tangent-typeface](https://github.com/newellart/tangent-typeface): Newell's sibling.
 - [**tokenhunt**](https://github.com/tokenhunt) — catch secrets at chat time, not commit time. [token-hunt](https://github.com/tokenhunt/token-hunt) + [pat-scanner](https://github.com/tokenhunt/pat-scanner).
 - [**humannewell**](https://github.com/humannewell) — software that advances quality of life. Building for public good, one initiative at a time.
 
 ## /start-here
 
-- [**newell-typeface**](https://github.com/JordanNewell/newell-typeface) — geometric display face built from rails and 45° diagonals.
-- [**tangent-typeface**](https://github.com/JordanNewell/tangent-typeface) — Newell's sibling: rails, 45° diagonals, perfect-circle arcs.
+- [**newell-typeface**](https://github.com/newellart/newell-typeface) — geometric display face built from rails and 45° diagonals.
+- [**tangent-typeface**](https://github.com/newellart/tangent-typeface) — Newell's sibling: rails, 45° diagonals, perfect-circle arcs.
 - [**openclaw-guru**](https://github.com/JordanNewell/openclaw-guru) — expert OpenClaw subagent; knowledge kept fresh by machine
 
 ## /writing
